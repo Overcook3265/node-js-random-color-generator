@@ -33,21 +33,3 @@ if (argv.length < 3) {
 `),
   );
 }
-
-//Overly complicated first attempt -_- :
-// let rColHex = chalk.hex(rCol)(rCol);
-// let blockTop = chalk.hex(rCol)(
-//   '###############################\n###############################\n###############################\n#####      ',
-// );
-// let blockBottom = chalk.hex(rCol)(
-//   '      #####\n###############################\n###############################\n###############################',
-// );
-
-// console.log(blockTop, rColHex, blockBottom);
-
-// const cat = 'cat';
-// console.log
-//   '###############################\n###############################\n###############################\n My %s has %d ears',
-//   cat,
-//   2,
-// );
