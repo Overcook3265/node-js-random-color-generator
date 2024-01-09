@@ -2,13 +2,27 @@ import { argv } from 'node:process';
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
 
-let userColor = randomColor({
-  luminosity: argv[2],
-  hue: argv[3],
-});
-console.log(userColor);
-console.log(
-  chalk.hex(userColor)(`
+console.log(argv.length);
+if (argv.length < 3) {
+  let rCol = randomColor();
+  console.log(
+    chalk.hex(rCol)(`
+###############################
+###############################
+###############################
+#####       ${rCol}       #####
+###############################
+###############################
+###############################
+`),
+  );
+} else if (argv.length > 2) {
+  let userColor = randomColor({
+    luminosity: argv[3],
+    hue: argv[2],
+  });
+  console.log(
+    chalk.hex(userColor)(`
 ###############################
 ###############################
 ###############################
@@ -17,24 +31,10 @@ console.log(
 ###############################
 ###############################
 `),
-);
+  );
+}
 
-//console.log(argv[2], argv[3]);
-
-// let rCol = randomColor();
-// console.log(
-//   chalk.hex(rCol)(`
-// ###############################
-// ###############################
-// ###############################
-// #####       ${rCol}       #####
-// ###############################
-// ###############################
-// ###############################
-// `),
-// );
-
-//Overly complicated first attempt:
+//Overly complicated first attempt -_- :
 // let rColHex = chalk.hex(rCol)(rCol);
 // let blockTop = chalk.hex(rCol)(
 //   '###############################\n###############################\n###############################\n#####      ',
