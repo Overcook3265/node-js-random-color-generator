@@ -2,7 +2,6 @@ import { argv } from 'node:process';
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
 
-console.log(argv.length);
 if (argv.length < 3) {
   const rCol = randomColor();
   console.log(
