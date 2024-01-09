@@ -4,7 +4,7 @@ import randomColor from 'randomcolor';
 
 console.log(argv.length);
 if (argv.length < 3) {
-  let rCol = randomColor();
+  const rCol = randomColor();
   console.log(
     chalk.hex(rCol)(`
 ###############################
@@ -17,7 +17,7 @@ if (argv.length < 3) {
 `),
   );
 } else if (argv.length > 2) {
-  let userColor = randomColor({
+  const userColor = randomColor({
     luminosity: argv[3],
     hue: argv[2],
   });
